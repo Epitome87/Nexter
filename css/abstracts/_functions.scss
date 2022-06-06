@@ -1,0 +1,22 @@
+@use 'sass:math';
+
+/* Helper functions to deal with conversion from pixels to REM and EM */
+@function rem($pixel) {
+  // If $pixel has a unit, throw an error
+  // Otherwise, divide $pixel by 16 to return rems
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + rem;
+  } @else {
+    @error 'Rem should be passed a unit-less number of pixels';
+  }
+}
+
+@function em($pixel) {
+  // If $pixel has a unit, throw an error
+  // Otherwise, divide $pixel by 16 to return ems
+  @if math.is-unitless($pixel) {
+    @return math.div($pixel, 16) + em;
+  } @else {
+    @error 'Em should be passed a unit-less number of pixels';
+  }
+}

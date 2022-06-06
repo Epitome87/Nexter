@@ -1,0 +1,80 @@
+@use '../abstracts/' as a;
+
+.container {
+  display: grid;
+  grid-template-columns: [footer-start] 1fr [footer-end];
+  grid-template-rows: repeat(8, auto);
+  width: min(100% - 2rem, 81.25rem);
+  margin-inline: auto;
+
+  @include a.breakpoint(md) {
+    grid-template-columns: [sidebar-start footer-start] 5rem [sidebar-end] 1fr 0.5fr [footer-end];
+  }
+}
+
+section {
+  border: 2px solid black;
+  padding: 1rem;
+  @include a.breakpoint(md) {
+    grid-column: 2 / -1;
+  }
+}
+
+#sidebar {
+  background-color: red;
+  grid-column: 1 / span 1;
+  grid-row: 1 / -1;
+
+  @include a.breakpoint(md) {
+    grid-column: 1 / span 1;
+  }
+}
+
+#header {
+  background-color: orange;
+  height: 85vh;
+
+  @include a.breakpoint(md) {
+    grid-column: 2 / span 1;
+  }
+}
+
+#realtors {
+  background-color: yellow;
+
+  @include a.breakpoint(md) {
+    grid-column: 3 / span 1;
+  }
+}
+
+#features {
+  background-color: green;
+}
+
+#story-images {
+  background-color: blue;
+
+  @include a.breakpoint(md) {
+    grid-column: 2 / span 1;
+  }
+}
+
+#story-content {
+  background-color: indigo;
+
+  @include a.breakpoint(md) {
+    grid-column: 3 / span 1;
+  }
+}
+
+#homes {
+  background-color: violet;
+}
+
+#gallery {
+  background-color: bisque;
+}
+
+#footer {
+  background-color: darkseagreen;
+}

@@ -1,0 +1,16 @@
+// Map some breakpoint keys to px values
+$breakpoints: (
+  sm: 499px,
+  md: 899px,
+  lg: 999px,
+  xl: 1399px,
+);
+
+// Mixin for media queries -- mobile-first
+@mixin breakpoint($size) {
+  $breakpoint-value: map-get($breakpoints, $size);
+
+  @media screen and (min-width: $breakpoint-value) {
+    @content;
+  }
+}

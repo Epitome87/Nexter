@@ -1,0 +1,25 @@
+/**************** Colors ******************/
+$color-text: hsl(0, 0%, 9%);
+$color-white: hsl(0, 0%, 96%);
+$color-outline: hsl(224, 76%, 48%);
+
+/**************** Fonts - Sizes, Weights, Family *******************/
+$font-size-heading: 3rem;
+$font-size-subheading: 1.5rem;
+$font-size-body: 1.1rem;
+$font-weight-body: 300;
+$font-weight-heading: 700;
+$font-family-body: 'Nunito';
+$font-family-heading: 'Josefin Sans';
+
+// Margin in "Container"
+$margin-mobile: 1rem;
+$margin-desktop: 2rem;
+
+// Border Radii
+$subtle: 5px;
+$rounded: 15px;
+$circle: 50%;
+
+// Breakpoints
+$max-width: 1400px;

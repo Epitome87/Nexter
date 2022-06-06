@@ -1,0 +1,52 @@
+@use '../abstracts/' as a;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: 0.2rem solid a.$color-outline;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: a.$font-family-body, sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+.link {
+  &:link,
+  &:visited {
+    display: inline-block;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+  }
+
+  &:hover,
+  &:active {
+    // TODO
+  }
+}

@@ -2,18 +2,20 @@
 
 .container {
   display: grid;
-  grid-template-columns: [footer-start] 1fr [footer-end];
+  grid-template-columns: [footer-start] minmax(305px, 1fr) [footer-end];
+  // grid-template-columns: 8rem repeat(8, minmax(min-content, 14rem));
   grid-template-rows: repeat(8, auto);
-  width: min(100% - 2rem, 81.25rem);
+  // width: min(100% - 2rem, a.$max-width);
   margin-inline: auto;
+  max-width: 100vw;
 
   @include a.breakpoint(md) {
     grid-template-columns: [sidebar-start footer-start] 5rem [sidebar-end] 1fr 0.5fr [footer-end];
+    // grid-template-columns: 8rem 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
   }
 }
 
 section {
-  border: 2px solid black;
   padding: 1rem;
   @include a.breakpoint(md) {
     grid-column: 2 / -1;

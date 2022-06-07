@@ -1,0 +1,21 @@
+@use '../abstracts/' as a;
+
+#features {
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  gap: 1rem;
+
+  @include a.breakpoint(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include a.breakpoint(md) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature {
+  border: 1px solid black;
+  padding: 1rem;
+}

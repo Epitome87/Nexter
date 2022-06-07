@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 /**************** Colors ******************/
 $color-text: hsl(0, 0%, 9%);
 $color-white: hsl(0, 0%, 96%);
@@ -22,4 +24,109 @@ $rounded: 15px;
 $circle: 50%;
 
 // Breakpoints
-$max-width: 1400px;
+$max-width: 1800px;
+
+$base: 1rem;
+
+// Map of sizes
+$sizes: (
+  '1': $base * 0.25,
+  '2': $base * 0.5,
+  '3': $base * 0.75,
+  '4': $base * 1,
+  '5': $base * 1.25,
+  '6': $base * 1.5,
+  '7': $base * 1.75,
+  '8': $base * 2,
+  '9': $base * 2.25,
+  '10': $base * 2.5,
+  '11': $base * 2.75,
+  '12': $base * 3,
+  '13': $base * 3.25,
+  '14': $base * 3.5,
+  '15': $base * 3.75,
+  '16': $base * 4,
+);
+
+$directions: (
+  'x': 'inline',
+  'y': 'block',
+  'l': 'inline-start',
+  'r': 'inline-end',
+  't': 'block-start',
+  'b': 'block-end',
+);
+
+// This will create a lot of utility classes for margin and padding, such as:
+// py-1, pt-4, mb-12, etc
+@each $size, $sizeValue in $sizes {
+  .p {
+    &-#{$size} {
+      padding: #{$sizeValue};
+    }
+    @each $direction, $directionValue in $directions {
+      &#{$direction}-#{$size} {
+        padding-#{$directionValue}: #{$sizeValue};
+      }
+    }
+  }
+
+  .m {
+    &-#{$size} {
+      margin: #{$sizeValue};
+    }
+    @each $direction, $directionValue in $directions {
+      &#{$direction}-#{$size} {
+        padding-#{$directionValue}: #{$sizeValue};
+      }
+    }
+  }
+}
+
+// Map of responsive text sizes
+$textSizes: (
+  'xm': clamp(0.78rem, calc(0.75rem + 0.14vw), 0.88rem),
+  'sm': clamp(0.94rem, calc(0.89rem + 0.23vw), 1.1rem),
+  'md': clamp(1.13rem, calc(1.05rem + 0.36vw), 1.38rem),
+  'lg': clamp(1.35rem, calc(1.24rem + 0.53vw), 1.72rem),
+  'xl': clamp(1.62rem, calc(1.47rem + 0.76vw), 2.15rem),
+  '2xl': clamp(1.94rem, calc(1.73rem + 1.06vw), 2.69rem),
+  '7': clamp(2.33rem, calc(2.03rem + 1.47vw), 3.36rem),
+  '8': clamp(2.8rem, calc(2.39rem + 2vw), 4.2rem),
+);
+
+// Creates utility classes such as ".text-sm", ".text-lg", etc which set font-size appropriate
+// We can assign these class names in the HTML itself or use @extend .text-sm within our SCSS
+@each $textSize, $textValue in $textSizes {
+  .text {
+    &-#{$textSize} {
+      font-size: #{$textValue};
+    }
+  }
+}
+
+// In case I shy away from using utility classes in the HTML, let's just make some variables out of our maps instead, as using the map.get syntax is rather annoying
+$text-xs: map.get($textSizes, 'xs');
+$text-sm: map.get($textSizes, 'sm');
+$text-md: map.get($textSizes, 'md');
+$text-lg: map.get($textSizes, 'lg');
+$text-xl: map.get($textSizes, 'xl');
+$text-lg: map.get($textSizes, 'lg');
+
+// Size variables, for margin, padding, spacing
+$size-1: $base * 0.25;
+$size-2: $base * 0.5;
+$size-3: $base * 0.75;
+$size-4: $base * 1;
+$size-5: $base * 1.25;
+$size-6: $base * 1.5;
+$size-7: $base * 1.75;
+$size-8: $base * 2;
+$size-9: $base * 2.25;
+$size-10: $base * 2.5;
+$size-11: $base * 2.75;
+$size-12: $base * 3;
+$size-13: $base * 3.25;
+$size-14: $base * 3.5;
+$size-15: $base * 3.75;
+$size-16: $base * 4;

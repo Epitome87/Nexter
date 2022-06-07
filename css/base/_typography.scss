@@ -8,3 +8,8 @@ body {
   font-family: a.$font-family-body, sans-serif;
   font-size: 16px;
 }
+
+p {
+  @extend .text-lg;
+  padding: a.$size-16;
+}

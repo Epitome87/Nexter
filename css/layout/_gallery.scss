@@ -1,0 +1,78 @@
+@use '../abstracts/' as a;
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(10%, 1fr));
+  grid-template-rows: repeat(7, 10vw);
+  grid-template-areas:
+    'image1 image1 image2 image2 image2 image3 image4 image4'
+    'image1 image1 image2 image2 image2 image3 image4 image4'
+    'image5 image5 image2 image2 image2 image8 image8 image9'
+    'image5 image5 image6 image6 image7 image8 image8 image9'
+    'image5 image5 image6 image6 image13 image13 image13 image9'
+    'image10 image11 image11 image12 image13 image13 image13 image14'
+    'image10 image11 image11 image12 image13 image13 image13 image14';
+  gap: 0.25rem;
+}
+
+.gallery__image {
+  text-align: center;
+  padding: 1rem;
+  background: teal;
+}
+
+.gallery__image--1 {
+  grid-area: image1;
+}
+
+.gallery__image--2 {
+  grid-area: image2;
+}
+
+.gallery__image--3 {
+  grid-area: image3;
+}
+
+.gallery__image--4 {
+  grid-area: image4;
+}
+
+.gallery__image--5 {
+  grid-area: image5;
+}
+
+.gallery__image--6 {
+  grid-area: image6;
+}
+
+.gallery__image--7 {
+  grid-area: image7;
+}
+
+.gallery__image--8 {
+  grid-area: image8;
+}
+
+.gallery__image--9 {
+  grid-area: image9;
+}
+
+.gallery__image--10 {
+  grid-area: image10;
+}
+
+.gallery__image--11 {
+  grid-area: image11;
+}
+
+.gallery__image--12 {
+  grid-area: image12;
+}
+
+.gallery__image--13 {
+  grid-area: image13;
+}
+
+.gallery__image--14 {
+  grid-area: image14;
+}

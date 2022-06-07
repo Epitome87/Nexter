@@ -1,0 +1,13 @@
+@use '../abstracts/' as a;
+
+#footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: center;
+  gap: 1rem;
+}
+
+.footer__link {
+  border: 1px solid black;
+  padding: 1rem;
+}

@@ -13,12 +13,17 @@
     'image10 image11 image11 image12 image13 image13 image13 image14'
     'image10 image11 image11 image12 image13 image13 image13 image14';
   gap: 0.25rem;
+  background-color: #f9f7f6;
 }
 
 .gallery__image {
-  text-align: center;
-  padding: 1rem;
   background: teal;
+}
+
+.gallery__image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .gallery__image--1 {

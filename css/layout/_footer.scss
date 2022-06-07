@@ -5,9 +5,19 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   justify-items: center;
   gap: 1rem;
+  background-color: #101d2c;
+  color: #fff;
 }
 
 .footer__link {
   border: 1px solid black;
   padding: 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: hsl(212, 47%, 40%);
+    transform: translateY(-0.2rem);
+  }
 }

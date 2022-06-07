@@ -4,6 +4,8 @@
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
+  background-color: #101d2c;
+  color: #fff;
 
   @include a.breakpoint(sm) {
     grid-template-columns: repeat(3, 1fr);
@@ -15,7 +17,7 @@
   }
 }
 
-h2 {
+#realtors h2 {
   @include a.breakpoint(sm) {
     grid-column: 1 / span 3;
   }

@@ -1,0 +1,23 @@
+@use '../abstracts/' as a;
+
+// TODO: Better, more SASS-oriented way for Themes without setting CSS variables?
+$primary-light: black;
+$secondary-light: #fff;
+$primary-dark: green;
+$secondary-dark: #000;
+
+:root {
+  --primary: #{$primary-light};
+  --secondary: #{$secondary-light};
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #{$primary-dark};
+    --secondary: #{$secondary-dark};
+  }
+}
+
+$theme-colors: (
+  'primary': a.$color-outline,
+);

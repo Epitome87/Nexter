@@ -143,3 +143,14 @@ Next, I will ensure each Section (which are Grid containers of their own) behave
 - While developing the overall Grid container for the entire page, I realized a value of -1 for row-end only brings a grid item to the end of the _explicit grid_, not the overall grid
 
 - Having the overall body be a Grid container is proving a little difficult. If just one section doesn't shrink and contain itself properly, it causes the entire outer Grid column to not behave properly. For example, the Gallery section is not shrinking properly below 700px, and it causes the other sections to be misaligned. To remedy this, I had to redo my outer container to not use 1fr for its column width, but a minmax between 310px and 1fr. 310px seemed to be the sweet-spot before overflow occured at 325px viewport size (the smallest size I support -- iphone SE).
+
+- When I accidentally wrote `::hover` instead of `:hover`, adding a `pointer: cursor` property worked, but adding a `background-color` did not!
+
+- To easily add a transparent tint to an element's background-image, you specify a linear-gradient before the image value in `background-color`. Note that it must be a linear-gradient -- a simple color value will not work! But we don't want an actual gradient for this particular tint. So we just specify the same value as both the starting and ending color in the gradient:
+
+```css
+background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 0, 0, 255, 0.5)) url(img/someImg.jpeg);
+```
+
+- For the Header section, I do not understand why it is going to a 3-column layout despite me explicitly telling it to use one column of size 1fr!!!
+  - Update: Oops! Due to a lack of specificity, one of the h2 tags in Header was being told to span 3 columns, because I wrote `h2: {}` instead of `.realtor h2 {}` in the realtor styles.

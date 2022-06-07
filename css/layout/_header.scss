@@ -1,0 +1,21 @@
+#header {
+  background-image: linear-gradient(rgba(16, 29, 44, 0.7), rgba(16, 29, 44, 0.7)), url('/img/hero.jpeg');
+  background-size: cover;
+  color: #fff;
+  display: grid;
+  grid-template-columns: 1fr;
+  // grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: row;
+}
+
+#header__logo {
+
+}
+
+.header__seen-on {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  align-items: center;
+}

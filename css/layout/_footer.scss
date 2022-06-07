@@ -1,16 +1,22 @@
 @use '../abstracts/' as a;
 
 #footer {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  justify-items: center;
-  gap: 1rem;
   background-color: #101d2c;
   color: #fff;
+  display: grid;
+  gap: 3rem;
+  padding-block: 5rem;
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  justify-items: space-between;
+  gap: 1rem;
+  text-align: center;
 }
 
 .footer__link {
-  border: 1px solid black;
   padding: 1rem;
   cursor: pointer;
   background-color: transparent;
@@ -20,4 +26,8 @@
     background-color: hsl(212, 47%, 40%);
     transform: translateY(-0.2rem);
   }
+}
+
+.footer__copyright {
+  text-align: center;
 }

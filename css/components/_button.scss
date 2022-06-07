@@ -1,0 +1,24 @@
+.button {
+  background-color: #c69963;
+  color: #fff;
+  font-family: inherit;
+  border: 0;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s ease-in-out;
+
+  &:focus,
+  &:hover {
+    background-color: #b28451;
+  }
+
+  &:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

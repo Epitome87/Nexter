@@ -138,6 +138,14 @@ I think it makes the most sense to ensure the overall page layout itself is full
 
 Next, I will ensure each Section (which are Grid containers of their own) behave in their respective responsive manners, with only a single, plain div to serve as their Grid children.
 
+**Find Commonalities**
+
+Every call-to-action type button/link has the same font properties, same text-transform, same padding, same background color, and same hover state. Since they have a background color, and all our button copy appear as Grid children, the background will take up the full with of the Grid cell. So we'll have to change the justification of these Grid children. To keep code DRY, I will create a re-usable class for these elements.
+
+**Thoughtful Design Implementation**
+
+On day two, I have finished most of the items listed above. While creating the basic layout of the site, and the basic layout of each section, the site is already looking quite nice! I set as few properties unrelated to layout as possible, so there is no real "design" in terms of font properties, hierarchy between elements, padding, whitespace, etc. During this portion of the process, I will little-by-little adhere to actual design.
+
 ## Insights
 
 - While developing the overall Grid container for the entire page, I realized a value of -1 for row-end only brings a grid item to the end of the _explicit grid_, not the overall grid
@@ -153,4 +161,34 @@ background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 0, 0, 255, 0.5))
 ```
 
 - For the Header section, I do not understand why it is going to a 3-column layout despite me explicitly telling it to use one column of size 1fr!!!
+
   - Update: Oops! Due to a lack of specificity, one of the h2 tags in Header was being told to span 3 columns, because I wrote `h2: {}` instead of `.realtor h2 {}` in the realtor styles.
+
+- In order to make each "section" of the site more semantic, I attempted to research what tags might be viable replacements to the `<section>` I was using. For the header, I decided that the `<header>` tag is appropriate, even though this section of my site contains quite a few headings, as well as logos. The reference for `<header>` actually specifically mentions it can contain relevant logos!:
+
+```
+The <header> tag in HTML is used to define the header for a document or a section as it contains the information related to the title and heading of the related content. The <header> element is intended to usually contain the section’s heading (an h1-h6 element or an <hgroup> element), but this is not required. It can also be used to wrap a section’s table of contents, a search form, or any relevant logos. The <header> tag is a new tag in HTML5 and it is a container tag ie., it contains a starting tag, content & the end tag. There can be several <header> elements in one document. This tag cannot be placed within a <footer>, <address> or another <header> element.
+```
+
+- Since my personal goal is to make as much use of the CSS Grid as possible, I have encountered several areas where this has introduced challenges or bloated code. Here's one example, where I simply want a clean way to align and space each Realtor Component from one another (I could have also just targeted the first two instances and gave them a margin-bottom, but still):
+
+```css
+.realtor__list {
+  // With flex
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  // With Grid
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, min-content);
+  align-items: center;
+  row-gap: 2rem;
+}
+```
+
+## Stumbles
+
+- After I had basically completed the overall grid layout and the grid layout of each individual section, I noticed a big mistake: The text sub-section of the "Story" section is supposed to take up 50% of the viewport width. Mine is only taking up about 20%, which was planned and dictated by the "Realtor" section. In order to make these sections behave appropriately, I most likely have to abandon my 3-column overall grid layout (where each section only spans 1 column) and introduce more columns, letting the Realtor section span across a few columns and the story text sub-section span across half the amount of columns.
+  - Another solution is to combine the story images and story content into a single grid container, but they each contain so many elements and shift so much.

@@ -10,28 +10,42 @@
   <body>
     <div class="container">
       <section id="sidebar">
-        <p>Sidebar</p>
+        <!-- TODO -->
       </section>
 
-      <section id="header">
-        <p class="header__logo" alt="Nexter logo">Nexter Logo</p>
+      <header id="header">
+        <img class="header__logo" src="img/logo.png" alt="Nexter logo" />
         <h2>Your own home</h2>
         <h1>The ultimate personal freedom</h1>
-        <p>View our properties</p>
-        <p>Seen on</p>
-        <div class="header__seen-on">
-          <p>BBC</p>
-          <p>Forbes</p>
-          <p>TechCrunch</p>
-          <p>Business Insider</p>
+        <button class="button" type="button">View our properties</button>
+        <p class="header__seen-on">Seen on</p>
+        <div class="header__seen-on-logos">
+          <img src="img/logo-bbc.png" alt="BBC logo" />
+          <img src="img/logo-forbes.png" alt="Forbes logo" />
+          <img src="img/logo-techcrunch.png" alt="TechCrunch logo" />
+          <img src="img/logo-bi.png" alt="Business Insider logo" />
         </div>
-      </section>
+      </header>
 
       <section id="realtors">
-        <h2>Realtors</h2>
-        <div class="realtor">Realtor 1</div>
-        <div class="realtor">Realtor 2</div>
-        <div class="realtor">Realtor 3</div>
+        <h2>Top 3 realtors</h2>
+        <div class="realtor__list">
+          <div class="realtor">
+            <img src="img/realtor-1.jpeg" alt="Some d00d" />
+            <p class="realtor__name">Erik Feinman</p>
+            <p realtor="realtor__sales">245 houses sold</p>
+          </div>
+          <div class="realtor">
+            <img src="img/realtor-2.jpeg" alt="Some d00dette" />
+            <p class="realtor__name">Kim Brown</p>
+            <p realtor="realtor__sales">212 houses sold</p>
+          </div>
+          <div class="realtor">
+            <img src="img/realtor-3.jpeg" alt="Some other d00d" />
+            <p class="realtor__name">Tobby Ramsey</p>
+            <p realtor="realtor__sales">198 houses sold</p>
+          </div>
+        </div>
       </section>
 
       <section id="features">
@@ -97,69 +111,75 @@
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iusto nobis fugit laboriosam culpa! Voluptates
           quisquam facere quaerat.
         </p>
-        <div>Find your new home</div>
+        <button class="button" type="button">Find your new home</button>
       </section>
 
       <section id="homes">
         <div class="home">
           <h2>Beautiful Family Home</h2>
+          <img src="img/house-1.jpeg" alt="Some house" />
           <div class="home__details">
-            <p>Location</p>
-            <p>Room Count</p>
-            <p>Square Footage</p>
-            <p>Price $$$</p>
+            <p>USA</p>
+            <p>5 Rooms</p>
+            <p>325 m<sup>2</sup></p>
+            <p>$1,200,000</p>
           </div>
-          <p>Contact Realtor</p>
+          <button class="button" type="button">Contact Realtor</button>
         </div>
         <div class="home">
           <h2>Modern Glass Villa</h2>
+          <img src="img/house-2.jpeg" alt="Some house" />
           <div class="home__details">
-            <p>Location</p>
-            <p>Room Count</p>
-            <p>Square Footage</p>
-            <p>Price $$$</p>
+            <p>Canada</p>
+            <p>6 rooms</p>
+            <p>450 m<sup>2</sup></p>
+            <p>$2,750,000</p>
           </div>
-          <p>Contact Realtor</p>
+          <button class="button" type="button">Contact Realtor</button>
         </div>
         <div class="home">
           <h2>Cozy Country Home</h2>
+          <img src="img/house-3.jpeg" alt="Some house" />
           <div class="home__details">
-            <p>Location</p>
-            <p>Room Count</p>
-            <p>Square Footage</p>
-            <p>Price $$$</p>
+            <p>UK</p>
+            <p>4 rooms</p>
+            <p>250 m<sup>2</sup></p>
+            <p>$850,000</p>
           </div>
-          <p>Contact Realtor</p>
+          <button class="button" type="button">Contact Realtor</button>
         </div>
         <div class="home">
           <h2>Large Rustic Villa</h2>
+          <img src="img/house-4.jpeg" alt="Some house" />
           <div class="home__details">
-            <p>Location</p>
-            <p>Room Count</p>
-            <p>Square Footage</p>
-            <p>Price $$$</p>
+            <p>Portugal</p>
+            <p>6 rooms</p>
+            <p>480 m<sup>2</sup></p>
+            <p>$1,950,000</p>
           </div>
-          <p>Contact Realtor</p>
+          <button class="button" type="button">Contact Realtor</button>
         </div>
         <div class="home">
           <h2>Majestic Palace Home</h2>
+          <img src="img/house-5.jpeg" alt="Some house" />
           <div class="home__details">
-            <p>Location</p>
-            <p>Room Count</p>
-            <p>Square Footage</p>
-            <p>Price $$$</p>
+            <p>Germany</p>
+            <p>18 rooms</p>
+            <p>4230 m<sup>2</sup></p>
+            <p>$9,500,000</p>
           </div>
-          <p>Contact Realtor</p>
+          <button class="button" type="button">Contact Realtor</button>
         </div>
         <div class="home">
           <h2>Modern Family Apartment</h2>
+          <img src="img/house-6.jpeg" alt="Some house" />
           <div class="home__details">
-            <p>Location</p>
-            <p>Room Count</p>
-            <p>Square Footage</p>
-            <p>Price $$$</p>
+            <p>Italy</p>
+            <p>3 rooms</p>
+            <p>180 m<sup>2</sup></p>
+            <p>$600,000</p>
           </div>
-          <p>Contact Realtor</p>
+          <button class="button" type="button">Contact Realtor</button>
         </div>
       </section>
 
@@ -208,18 +228,19 @@
         </div>
       </section>
 
-      <section id="footer">
-        <div class="footer__link">Footer Link 1</div>
-        <div class="footer__link">Footer Link 2</div>
-        <div class="footer__link">Footer Link 3</div>
-        <div class="footer__link">Footer Link 4</div>
-        <div class="footer__link">Footer Link 5</div>
-        <div class="footer__link">Footer Link 6</div>
-      </section>
+      <footer id="footer">
+        <ul class="footer__links">
+          <li class="footer__link"><a href="#">Find your dream home</a></li>
+          <li class="footer__link"><a href="#">Request proposal</a></li>
+          <li class="footer__link"><a href="#">Download home planner</a></li>
+          <li class="footer__link"><a href="#">Contact us</a></li>
+          <li class="footer__link"><a href="#">Submit your property</a></li>
+          <li class="footer__link"><a href="#">Come work with us</a></li>
+        </ul>
+        <p class="footer__copyright">
+          &copy; Original design by Jonas Schmedtmann, recreated completely independent by Matthew McGrath
+        </p>
+      </footer>
     </div>
-
-    <section id="sidebar">
-      <p>Sidebar</p>
-    </section>
   </body>
 </html>

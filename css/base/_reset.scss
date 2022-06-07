@@ -37,9 +37,10 @@ textarea {
   font-family: inherit;
 }
 
-.link {
+a {
   &:link,
   &:visited {
+    color: #fff;
     display: inline-block;
     text-decoration: none;
     transition: 0.3s ease-in-out;
@@ -49,4 +50,8 @@ textarea {
   &:active {
     // TODO
   }
+}
+
+li {
+  list-style-type: none;
 }

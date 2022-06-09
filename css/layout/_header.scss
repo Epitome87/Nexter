@@ -1,16 +1,18 @@
 @use '../abstracts' as a;
 
 #header {
-  background-image: linear-gradient(rgba(16, 29, 44, 0.7), rgba(16, 29, 44, 0.7)), url('../img/hero.jpeg');
-  background-size: cover;
-  color: #fff;
   display: grid;
   grid-template-columns: 1fr;
-  grid-auto-flow: row;
-  // Most children are aligned to the start, so we'll just override this in the elements that aren't
-  align-items: start;
-
+  grid-template-rows: 1fr min-content minmax(6rem, min-content) 1fr;
+  background-image: linear-gradient(to bottom, rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 1)), url('../img/hero.jpeg');
+  background-size: cover;
+  color: #fff;
   font-family: a.$font-family-heading;
+  padding: 2rem 5rem 5rem 5rem;
+
+  @include a.breakpoint(md) {
+    background-image: linear-gradient(to right, rgba(16, 29, 44, 0.8), rgba(16, 29, 44, 1)), url('../img/hero.jpeg');
+  }
 }
 
 .header__logo {
@@ -18,8 +20,14 @@
   max-width: 10rem;
 }
 
+#header h1 {
+  font-size: a.$text-xl;
+  line-height: 1.1;
+}
+
 #header h2 {
   color: a.$color-primary;
+  font-size: a.$text-sm;
   text-transform: uppercase;
 }
 
@@ -34,7 +42,6 @@
   color: a.$color-text-gray-300;
   font-family: a.$font-family-body;
 
-
   // LEARN: I had to Google how to do these horizontal bars before and after the "Seen On" text.
   // I know how to do before and after pseudo-elements, but was having issues aligning the bars
   // And then I saw an approach that requires no absolute position or left/top or transform!
@@ -43,14 +50,14 @@
     content: '';
     height: 2px;
     display: block;
-    background-color: a.$color-text-gray-300;;
+    background-color: a.$color-text-gray-300;
   }
 
   &::after {
     content: '';
     height: 2px;
     display: block;
-    background-color: a.$color-text-gray-300;;
+    background-color: a.$color-text-gray-300;
   }
 }
 
@@ -62,15 +69,24 @@
   justify-items: center;
   align-items: center;
   column-gap: 2rem;
+  row-gap: 1.5rem;
+
+  @include a.breakpoint(md) {
+    // grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .header__seen-on-logos img {
-  max-width: 7rem;
+  max-width: 1rem;
   opacity: 0.5;
+
+  @include a.breakpoint(md) {
+    max-width: 7rem;
+  }
 }
 
 #header button {
   // We don't want the stretched appearance for a button
   justify-self: left;
-  align-self: center;
+  align-self: start;
 }

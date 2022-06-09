@@ -3,7 +3,6 @@
 #realtors {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: min-content 1fr;
   justify-items: center;
   align-content: center;
   justify-content: center;
@@ -17,6 +16,9 @@
   align-self: end;
   color: a.$color-primary;
   font-family: a.$font-family-heading;
+  font-size: a.$text-sm;
+  font-weight: 400;
+  text-transform: uppercase;
 
   @include a.breakpoint(sm) {
     grid-column: 1 / span 3;
@@ -53,6 +55,11 @@
   max-width: 3.5rem;
 }
 
+.realtor__name {
+  font-size: a.$text-sm;
+}
+
 .realtor__sales {
   font-family: a.$font-family-body;
+  font-weight: 300;
 }

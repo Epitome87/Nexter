@@ -1,3 +1,4 @@
+@use 'sass:color';
 @use '../abstracts/' as a;
 
 #footer {
@@ -6,28 +7,31 @@
   display: grid;
   gap: 3rem;
   padding-block: 5rem;
+  text-align: center;
 }
 
 .footer__links {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  align-items: center;
   justify-items: space-between;
   gap: 1rem;
-  text-align: center;
 }
 
 .footer__link {
-  padding: 1rem;
-  cursor: pointer;
-  background-color: transparent;
-  transition: all 0.3s ease-in-out;
+  a {
+    background-color: transparent;
+    border-radius: a.$subtle;
+    cursor: pointer;
+    font-size: a.$text-xs;
+    padding: 1rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out;
 
-  &:hover {
-    background-color: hsl(212, 47%, 40%);
-    transform: translateY(-0.2rem);
+    &:active,
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      transform: translateY(-0.2rem);
+    }
   }
-}
-
-.footer__copyright {
-  text-align: center;
 }

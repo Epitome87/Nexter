@@ -3,8 +3,9 @@
 .button {
   background-color: a.$color-primary;
   color: #fff;
-  font-family: inherit;
-  border: 0;
+  font-family: a.$font-family-heading;
+  border: none;
+  border-radius: a.$subtle;
   padding: 1rem 2rem;
   cursor: pointer;
   text-transform: uppercase;

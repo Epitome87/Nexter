@@ -3,26 +3,20 @@
 #realtors {
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: min-content 1fr;
   justify-items: center;
   align-content: center;
   justify-content: center;
+  gap: 1rem;
   background-color: #101d2c;
   color: #fff;
-
-  @include a.breakpoint(sm) {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, min-content);
-  }
-
-  @include a.breakpoint(md) {
-    grid-template-columns: 1fr;
-    // grid-template-rows: repeat(2, min-content);
-  }
+  padding: 1.5rem;
 }
 
 #realtors h2 {
   align-self: end;
-  color: #c69963;
+  color: a.$color-primary;
+  font-family: a.$font-family-heading;
 
   @include a.breakpoint(sm) {
     grid-column: 1 / span 3;
@@ -32,17 +26,11 @@
 .realtor__list {
   display: grid;
   grid-template-columns: 1fr;
-  // Seems by default these want to consume as much height as possible? So we need this:
-  grid-template-rows: repeat(3, min-content);
   align-items: center;
-  row-gap: 2rem;
+  gap: 2rem;
 
   @include a.breakpoint(sm) {
-    grid-column: 1 / span 3;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, max-content);
-    // justify-content: center;
-    // justify-items: center;
   }
 
   @include a.breakpoint(md) {
@@ -56,6 +44,7 @@
   grid-template-columns: 3.5rem 1fr;
   align-items: center;
   column-gap: 1.5rem;
+  font-family: a.$font-family-heading;
 }
 
 .realtor img {
@@ -64,8 +53,6 @@
   max-width: 3.5rem;
 }
 
-// TODO: This is a temporary and sloppy and pointless reset!
-// TODO: Once I begin with actual design and remove the padding I gave to each p tag, this will go away
-.realtor p {
-  padding: 0;
+.realtor__sales {
+  font-family: a.$font-family-body;
 }

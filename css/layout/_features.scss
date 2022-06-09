@@ -3,7 +3,8 @@
 #features {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 3rem;
+  padding-block: 8rem;
 
   @include a.breakpoint(sm) {
     grid-template-columns: repeat(2, 1fr);
@@ -15,25 +16,30 @@
 }
 
 .feature {
-  padding: 1rem;
-
   display: grid;
   grid-template-columns: min-content 1fr;
-  align-items: start;
-  justify-items: start;
+  // This helps each Feature Card align with one another better. Why though?!
+  // grid-template-rows: 1fr 1fr;
+  row-gap: 1rem;
+  column-gap: 1.5rem;
 }
 
 .feature__icon {
-  fill: #c69963;
-  width: 3rem;
-  height: 3rem;
   grid-column: 1 / span 1;
+  fill: a.$color-primary;
+  height: 2rem;
+  width: 2rem;
 }
 
 .feature__heading {
   grid-column: 2 / span 1;
+  font-family: a.$font-family-heading;
+  font-size: a.$text-sm;
+  color: a.$color-text-gray-500;
 }
 
 .feature__text {
   grid-column: 2 / span 1;
+  color: a.$color-text-gray-400;
+  font-size: a.$text-sm;
 }

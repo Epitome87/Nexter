@@ -1,10 +1,12 @@
+@use '../abstracts/' as a;
+
 #story-images {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(8, 1fr);
 
   background-color: pink;
-  background-image: url(/img/back.jpg);
+  background-image: url('../img/back.jpg');
   background-size: cover;
 
   // Need to push a child outside of this element
@@ -16,18 +18,28 @@
 }
 
 #story-images :nth-child(1) {
-  grid-column: 2 / span 5;
-  grid-row: 2 / span 5;
+  grid-column: 1 / span 6;
+  grid-row: 1 / span 8;
+
+  @include a.breakpoint(md) {
+    grid-column: 2 / span 5;
+    grid-row: 2 / span 5;
+  }
 }
 
 #story-images :nth-child(2) {
   grid-column: 5 / span 4;
-  grid-row: 5 / span 4;
+  grid-row: 3 / span 4;
   z-index: 1;
 
-  // TODO: How do we span outside of container without transforming or position absolute:
-  position: absolute;
-  right: -2rem;
+  @include a.breakpoint(md) {
+    grid-column: 5 / span 4;
+    grid-row: 5 / span 4;
+
+    // TODO: How do we span outside of container without transforming or position absolute:
+    position: absolute;
+    right: -2rem;
+  }
 }
 
 #story-content {
@@ -48,7 +60,15 @@
   background-color: #f9f7f6;
 }
 
+#story-content h2 {
+  color: #54483A;
+}
+
 #story-content h3 {
   text-transform: uppercase;
-  color: #c69963;
+  color: a.$color-primary;
+}
+
+#story-content p {
+  color: #6D5D4B !important;
 }

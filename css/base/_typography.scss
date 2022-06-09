@@ -6,7 +6,7 @@
 body {
   color: a.$color-text;
   font-family: a.$font-family-body, sans-serif;
-  font-size: 16px;
+  font-size: a.$text-xs;
 }
 
 h1,
@@ -16,8 +16,8 @@ h4,
 h5,
 h6,
 p {
-  @extend .text-sm;
-  padding: a.$size-4;
+  // @extend .text-sm;
+  // padding: a.$size-4;
 }
 
 h1,
@@ -27,4 +27,5 @@ h4,
 h5,
 h6 {
   @extend .text-md;
+  font-weight: 800;
 }

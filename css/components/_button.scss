@@ -1,5 +1,7 @@
+@use '../abstracts/' as a;
+
 .button {
-  background-color: #c69963;
+  background-color: a.$color-primary;
   color: #fff;
   font-family: inherit;
   border: 0;

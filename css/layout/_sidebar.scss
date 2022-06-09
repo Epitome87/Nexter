@@ -1,3 +1,5 @@
+@use '../abstracts' as a;
+
 #sidebar {
-  background-color: #c69963;
+  background-color: a.$color-primary;
 }

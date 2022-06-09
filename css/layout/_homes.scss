@@ -3,7 +3,8 @@
 #homes {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 4rem;
+  padding-block: 8rem;
 
   @include a.breakpoint(sm) {
     grid-template-columns: repeat(2, 1fr);
@@ -20,8 +21,8 @@
   grid-template-columns: repeat(2, 1fr);
   // TODO: How should I value the first row (for image?)
   grid-template-rows: 15rem repeat(1, 1fr) max-content;
-
   background-color: #f9f7f6;
+  text-align: center;
 }
 
 .home img {
@@ -41,6 +42,8 @@
   justify-self: center;
   transform: translateY(50%);
   z-index: 1;
+  padding: 0.5rem 1rem;
+  font-size: a.$text-md;
 }
 
 .home__details {
@@ -51,6 +54,16 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, auto);
+  row-gap: 1.5rem;
+  align-items: center;
+
+  > p {
+    padding-inline: 1rem;
+  }
+}
+
+.home__details p {
+  color: #6D5D4B;
 }
 
 .home button {

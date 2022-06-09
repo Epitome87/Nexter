@@ -8,9 +8,11 @@
   // width: min(100% - 2rem, a.$max-width);
   margin-inline: auto;
   max-width: 100vw;
+  overflow-x: hidden;
 
   @include a.breakpoint(md) {
     grid-template-columns: [sidebar-start footer-start] 5rem [sidebar-end] 1fr 0.5fr [footer-end];
+    grid-template-columns: [sidebar-start footer-start] 5rem [sidebar-end] repeat(4, 1fr) [footer-end];
     // grid-template-columns: 8rem 1fr repeat(8, minmax(min-content, 14rem)) 1fr;
   }
 }
@@ -37,25 +39,25 @@ footer {
   height: 85vh;
 
   @include a.breakpoint(md) {
-    grid-column: 2 / span 1;
+    grid-column: 2 / span 3;
   }
 }
 
 #realtors {
   @include a.breakpoint(md) {
-    grid-column: 3 / span 1;
+    grid-column: 5 / span 1;
   }
 }
 
 #story-images {
   @include a.breakpoint(md) {
-    grid-column: 2 / span 1;
+    grid-column: 2 / span 2;
   }
 }
 
 #story-content {
   @include a.breakpoint(md) {
-    grid-column: 3 / span 1;
+    grid-column: 4 / span 2;
   }
 }
 
